@@ -1,0 +1,9 @@
+services:
+  spacex-etl:
+    build: .
+    container_name: spacex-etl
+    environment:
+      - S3_BUCKET=candidate-test-bucket2k25
+    volumes:
+      - .:/app
+    command: ["/app/deploye.sh"]
